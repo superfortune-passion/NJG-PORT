@@ -7,7 +7,7 @@ Professional portfolio site for a Senior Full Stack Engineer. Built with **Next.
 - Hero with rotating typing cursor for key skills
 - About, Experience, Skills, Education, and Contact sections
 - **WhatsApp** contact (not phone) — opens chat via `wa.me`
-- Light / dark mode toggle
+- Dark theme throughout
 - Responsive layout with scroll fade-in animations
 - Contact form sends email to your inbox (via [Web3Forms](https://web3forms.com))
 
