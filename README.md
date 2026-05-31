@@ -1,4 +1,4 @@
-# Norman John Gutierrez — Portfolio
+# N J G — Port
 
 Professional portfolio site for a Senior Full Stack Engineer. Built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**.
 
