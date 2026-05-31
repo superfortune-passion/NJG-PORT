@@ -36,6 +36,9 @@ export type Experience = {
   location: string;
   highlights: string[];
   tags: string[];
+  screenshot: string;
+  screenshotAlt: string;
+  platformLabel: string;
 };
 
 export const experience: Experience[] = [
@@ -53,6 +56,9 @@ export const experience: Experience[] = [
       "Delivered enterprise integrations connecting internal services with external operational and reporting systems.",
     ],
     tags: ["SaaS", "ERP", "Workflow Automation", "Integrations", "Reporting"],
+    screenshot: "/companies/wherefour.png",
+    screenshotAlt: "Wherefour production control and inventory SaaS platform",
+    platformLabel: "Manufacturing SaaS & ERP",
   },
   {
     company: "Cera",
@@ -69,6 +75,9 @@ export const experience: Experience[] = [
       "Connected external operational services and healthcare systems through platform integrations.",
     ],
     tags: ["Healthcare SaaS", "Scheduling", "Workflow Automation", "Integrations"],
+    screenshot: "/companies/cera.png",
+    screenshotAlt: "Cera healthcare technology and AI-powered care platform",
+    platformLabel: "Healthcare SaaS & AI",
   },
   {
     company: "Teladoc Health",
@@ -85,6 +94,9 @@ export const experience: Experience[] = [
       "Monitored production issues and releases to maintain stable performance during deployment cycles.",
     ],
     tags: ["Digital Health", "Patient Engagement", "REST APIs", "Production Support"],
+    screenshot: "/companies/teladoc.png",
+    screenshotAlt: "Teladoc Health virtual care and patient engagement platform",
+    platformLabel: "Digital Healthcare",
   },
   {
     company: "Trend Micro",
@@ -101,6 +113,9 @@ export const experience: Experience[] = [
       "Connected cloud services with enterprise operational systems across business functions.",
     ],
     tags: ["Cloud Security", "Enterprise", "Monitoring", "Scalability"],
+    screenshot: "/companies/trend-micro.png",
+    screenshotAlt: "Trend Micro enterprise cloud security platform",
+    platformLabel: "Cloud Security",
   },
   {
     company: "Cathay Financial Holdings",
@@ -116,6 +131,9 @@ export const experience: Experience[] = [
       "Modernized systems to improve usability and streamline operational workflows.",
     ],
     tags: ["FinTech", "Digital Banking", "Enterprise SDLC", "Reporting"],
+    screenshot: "/companies/cathay.png",
+    screenshotAlt: "Cathay Financial Holdings digital banking and FinTech platform",
+    platformLabel: "Digital Banking & FinTech",
   },
 ];
 
@@ -162,6 +180,8 @@ export const education = {
   degree: "Bachelor of Science in Computer Science",
   school: "National Taiwan University of Science and Technology",
   duration: "04/2013 – 03/2017",
+  image: "/education/ntust.png",
+  imageAlt: "National Taiwan University of Science and Technology campus entrance",
 };
 
 export const navLinks = [

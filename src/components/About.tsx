@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { summary } from "@/data/portfolio";
 import { FadeIn } from "./FadeIn";
 
@@ -16,18 +17,15 @@ export function About() {
 
         <div className="mt-12 grid gap-12 lg:grid-cols-[280px_1fr] lg:items-start">
           <FadeIn delay={100}>
-            <div className="mx-auto aspect-square w-full max-w-[280px] overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-100 to-slate-200 shadow-lg dark:border-slate-700 dark:from-slate-800 dark:to-slate-900">
-              <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-accent/10 text-3xl font-bold text-accent dark:bg-accent-light/10 dark:text-accent-light">
-                  NG
-                </div>
-                <p className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">
-                  Profile photo placeholder
-                </p>
-                <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
-                  Replace with your image
-                </p>
-              </div>
+            <div className="mx-auto aspect-square w-full max-w-[280px] overflow-hidden rounded-full border-4 border-slate-200 shadow-lg dark:border-slate-700">
+              <Image
+                src="/profile.png"
+                alt="Norman John Gutierrez"
+                width={280}
+                height={280}
+                className="h-full w-full object-cover"
+                priority
+              />
             </div>
           </FadeIn>
 
