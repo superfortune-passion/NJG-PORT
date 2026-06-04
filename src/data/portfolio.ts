@@ -13,16 +13,16 @@ export const profile = {
 };
 
 export const typingSkills = [
+  "LLMs",
+  "AI Agents",
+  "OpenAI API",
+  "AI Workflows",
   "React",
   "Next.js",
   "TypeScript",
   "Node.js",
   "AWS",
-  "Docker",
-  "CI/CD",
   "PostgreSQL",
-  "Python",
-  "SaaS Platforms",
 ];
 
 export const summary = `Senior Full Stack Engineer with 9+ years of experience building SaaS platforms, enterprise applications, healthcare systems, and cloud-based products. Experience includes customer-facing platforms, operational dashboards, internal tools, and workflow systems used across finance, healthcare, cloud security, and SaaS environments.
@@ -49,16 +49,16 @@ export const experience: Experience[] = [
     location: "US",
     highlights: [
       "Enhanced SaaS applications for inventory tracking, production workflows, and operational reporting across manufacturing teams.",
-      "Refined customer-facing workflows to simplify internal coordination and reduce delays in day-to-day operations.",
+      "Built AI-native product capabilities within manufacturing SaaS and ERP workflows, including intelligent reporting and production-oriented assistance features.",
       "Built internal features for reporting visibility, workflow automation, and operational management.",
-      "Coordinated with stakeholders, operational teams, and release management during product planning.",
+      "Integrated LLM-backed services and agent-style automation into operational tools, connecting model outputs with inventory, production, and reporting systems.",
       "Streamlined backend processing and reporting to improve platform stability across high-usage workflows.",
       "Delivered enterprise integrations connecting internal services with external operational and reporting systems.",
     ],
-    tags: ["SaaS", "ERP", "Workflow Automation", "Integrations", "Reporting"],
+    tags: ["SaaS", "ERP", "AI-Native Products", "LLMs & AI Agents", "Workflow Automation", "Integrations"],
     screenshot: "/companies/wherefour.png",
     screenshotAlt: "Wherefour production control and inventory SaaS platform",
-    platformLabel: "Manufacturing SaaS & ERP",
+    platformLabel: "Manufacturing SaaS, ERP & AI",
   },
   {
     company: "Cera",
@@ -67,14 +67,14 @@ export const experience: Experience[] = [
     location: "UK",
     highlights: [
       "Led healthcare platform initiatives for care coordination, scheduling, reporting, and patient service operations.",
-      "Collaborated with analysts, product managers, and operational stakeholders to improve platform usability.",
+      "Delivered AI-native healthcare application features for care coordination and scheduling, embedding intelligent assistance into day-to-day operational workflows.",
       "Shipped workflow automation and operational visibility features for healthcare coordination.",
       "Drove modernization for long-term stability, maintainability, and scalability.",
       "Improved reliability of high-usage reporting and coordination workflows through backend refinements.",
-      "Coordinated feature rollout, testing, and release planning with remote engineering and QA teams.",
+      "Integrated LLM and AI agent patterns into platform services—supporting automated coordination, workflow guidance, and AI-assisted reporting across care operations.",
       "Connected external operational services and healthcare systems through platform integrations.",
     ],
-    tags: ["Healthcare SaaS", "Scheduling", "Workflow Automation", "Integrations"],
+    tags: ["Healthcare SaaS", "AI-Native Products", "LLMs & AI Agents", "Scheduling", "Workflow Automation", "Integrations"],
     screenshot: "/companies/cera.png",
     screenshotAlt: "Cera healthcare technology and AI-powered care platform",
     platformLabel: "Healthcare SaaS & AI",
@@ -88,15 +88,15 @@ export const experience: Experience[] = [
       "Supported virtual healthcare platforms for patient engagement, scheduling, and operational coordination.",
       "Refined customer-facing applications and internal tools with engineering and product teams.",
       "Delivered reporting visibility and healthcare workflow management features.",
-      "Improved application responsiveness and reliability across platform enhancements.",
+      "Supported AI-integrated virtual care and patient-engagement features within digital health platforms, aligning product flows with intelligent assistance capabilities.",
       "Reduced operational friction through workflow automation in reporting and service management.",
       "Built backend services and integration flows between internal systems and external healthcare platforms.",
-      "Monitored production issues and releases to maintain stable performance during deployment cycles.",
+      "Integrated LLM-powered workflows and API connections between internal healthcare services and AI-assisted capabilities used in scheduling and service coordination.",
     ],
-    tags: ["Digital Health", "Patient Engagement", "REST APIs", "Production Support"],
+    tags: ["Digital Health", "AI-Integrated Systems", "LLMs", "Patient Engagement", "REST APIs"],
     screenshot: "/companies/teladoc.png",
     screenshotAlt: "Teladoc Health virtual care and patient engagement platform",
-    platformLabel: "Digital Healthcare",
+    platformLabel: "Digital Healthcare & AI",
   },
   {
     company: "Trend Micro",
@@ -137,7 +137,60 @@ export const experience: Experience[] = [
   },
 ];
 
-export const skillCategories = [
+export type Skill = { name: string; level: number };
+
+export type SkillGroup = {
+  label: string;
+  skills: Skill[];
+};
+
+export type SkillCategory = {
+  name: string;
+  featured?: boolean;
+  skills?: Skill[];
+  groups?: SkillGroup[];
+};
+
+export const skillCategories: SkillCategory[] = [
+  {
+    name: "AI & Intelligent Systems",
+    featured: true,
+    groups: [
+      {
+        label: "LLM / AI Integration",
+        skills: [
+          { name: "OpenAI, Hugging Face & model APIs", level: 88 },
+          { name: "Chatbots, agents & embedded AI workflows", level: 87 },
+        ],
+      },
+      {
+        label: "Data & Pipelines",
+        skills: [{ name: "Data prep & pipelines for AI", level: 86 }],
+      },
+      {
+        label: "AI Backend",
+        skills: [
+          { name: "Microservices & serverless for models", level: 87 },
+          { name: "Scalable low-latency inference", level: 85 },
+        ],
+      },
+      {
+        label: "AI Frontend",
+        skills: [
+          { name: "Real-time AI UIs & streaming", level: 88 },
+          { name: "Interactive agents & predictive UX", level: 86 },
+        ],
+      },
+      {
+        label: "MLOps",
+        skills: [{ name: "Deploy, monitor & version models", level: 84 }],
+      },
+      {
+        label: "Product & AI",
+        skills: [{ name: "AI product sense & workflow design", level: 90 }],
+      },
+    ],
+  },
   {
     name: "Frontend",
     skills: [

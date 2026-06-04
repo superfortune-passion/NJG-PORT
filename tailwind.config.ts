@@ -15,6 +15,11 @@ const config: Config = {
           light: "#14b8a6",
           dark: "#0f766e",
         },
+        ai: {
+          DEFAULT: "#8b5cf6",
+          light: "#a78bfa",
+          dark: "#7c3aed",
+        },
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],

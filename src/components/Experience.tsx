@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { experience } from "@/data/portfolio";
+import { isAiHighlight, isAiPlatformLabel, isAiTag } from "@/lib/ai";
+import { AiSparkleIcon } from "./AiSparkleIcon";
 import { FadeIn } from "./FadeIn";
 
 function companySlug(name: string) {
@@ -13,7 +15,7 @@ export function Experience() {
         <FadeIn>
           <h2 className="section-title">Experience</h2>
           <p className="section-subtitle">
-            SaaS, healthcare, cloud security, and finance
+            SaaS, healthcare, AI-integrated platforms, and finance
           </p>
         </FadeIn>
 
@@ -52,9 +54,16 @@ export function Experience() {
                         height={675}
                         className="h-auto max-h-48 w-full object-cover object-top transition duration-500 group-hover:scale-[1.03] sm:max-h-56"
                       />
-                      <span className="absolute left-4 top-4 z-10 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-800 backdrop-blur-sm dark:bg-slate-900/90 dark:text-slate-100">
-                        {job.platformLabel}
-                      </span>
+                      {isAiPlatformLabel(job.platformLabel) ? (
+                        <span className="ai-platform-badge absolute left-4 top-4 z-10">
+                          <AiSparkleIcon className="h-3 w-3" />
+                          {job.platformLabel}
+                        </span>
+                      ) : (
+                        <span className="absolute left-4 top-4 z-10 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-800 backdrop-blur-sm dark:bg-slate-900/90 dark:text-slate-100">
+                          {job.platformLabel}
+                        </span>
+                      )}
                     </div>
 
                     <div className="p-6">
@@ -75,21 +84,43 @@ export function Experience() {
                         </div>
                       </div>
 
-                      <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                        {job.highlights.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
+                      <ul className="mt-4 space-y-2 text-sm leading-relaxed">
+                        {job.highlights.map((item) =>
+                          isAiHighlight(item) ? (
+                            <li key={item} className="ai-highlight-row">
+                              <span className="mb-1 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-violet-500 dark:text-violet-400">
+                                <AiSparkleIcon className="h-3 w-3" />
+                                AI
+                              </span>
+                              {item}
+                            </li>
+                          ) : (
+                            <li
+                              key={item}
+                              className="list-inside list-disc text-slate-600 dark:text-slate-300"
+                            >
+                              {item}
+                            </li>
+                          )
+                        )}
                       </ul>
 
                       <div className="mt-4 flex flex-wrap gap-2">
-                        {job.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                        {job.tags.map((tag) =>
+                          isAiTag(tag) ? (
+                            <span key={tag} className="ai-tag">
+                              <AiSparkleIcon className="h-3 w-3" />
+                              {tag}
+                            </span>
+                          ) : (
+                            <span
+                              key={tag}
+                              className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                            >
+                              {tag}
+                            </span>
+                          )
+                        )}
                       </div>
                     </div>
                   </div>
